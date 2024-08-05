@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-@airline_1 = Airline.create!(name: 'Frontier')
+    @airline_1 = Airline.create!(name: 'Frontier')
     @airline_2 = Airline.create!(name: 'Delta')
     @airline_3 = Airline.create!(name: 'Southwest')
     
