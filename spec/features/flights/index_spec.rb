@@ -37,13 +37,27 @@ RSpec.describe 'flight index', type: :feature do
 
   it "has button to delete passenger from flight" do
     visit flights_path
-
     within(".passenger-#{@passenger_1.id}") do
       click_button 'Remove'
     end
-    
     expect(current_path).to eq(flights_path) 
-
     expect(page).not_to have_content(@passenger_1.name)
+    visit flights_path
+
+
+    within(".passenger-#{@passenger_2.id}") do
+      click_button 'Remove'
+    end
+    expect(current_path).to eq(flights_path) 
+    expect(page).not_to have_content(@passenger_2.name)
+    visit flights_path
+
+
+
+    within(".passenger-#{@passenger_3.id}") do
+      click_button 'Remove'
+    end
+    expect(current_path).to eq(flights_path)
+    expect(page).not_to have_content(@passenger_3.name)
   end
 end

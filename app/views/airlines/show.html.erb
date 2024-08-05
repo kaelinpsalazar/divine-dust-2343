@@ -1,2 +1,12 @@
-<h1>Airlines#show</h1>
-<p>Find me in app/views/airlines/show.html.erb</p>
+<h1><%= @airline.name %></h1>
+
+<h2>Adult Passengers</h2>
+<% if @passengers.any? %>
+  <ul>
+    <% @passengers.each do |passenger| %>
+      <li><%= passenger.name %> (Age: <%= passenger.age %>)</li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No passengers found.</p>
+<% end %>
